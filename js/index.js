@@ -13,22 +13,25 @@ let url_artistas = `https://api.deezer.com/chart/0/artists?limit=5&secret_key=${
 // Fetch CANCIONES
 fetch(proxy + url_canciones)
     .then(function(response) {
-        return response.json();
+        return response.json()
     })
     .then(function(resultados) {
-        console.log(resultados);
+        let datos = JSON.parse(resultados.contents)
+        return datos;
+    })
+    .then(function(datos) {
         let titulo;
         let foto;
         let cantante;
         for (let i = 0; i < 5; i++) {
-            titulo = resultados.data[i].title_short;
-            foto = resultados.data[i].album.cover_xl;
-            cantante = resultados.data[i].artist.name
-
+            titulo = datos.data[i].title_short;
+            foto = datos.data[i].album.cover_xl;
+            cantante = datos.data[i].artist.name
+            
             lista_canciones.innerHTML += `
                 <li>
                     <h3>${titulo}</h3>
-                    <img src="${foto}" alt="">
+                    <img src="${foto}" alt="${titulo}">
                     <p>${cantante}</p>
                 </li>
             `
@@ -39,11 +42,32 @@ fetch(proxy + url_canciones)
     })
 
 // Fetch ALBUMES
-fetch(proxy + url_canciones)
-    .then(function(data) {
-        return data.json()
+fetch(proxy + url_albumes)
+    .then(function(response) {
+        return response.json()
     })
     .then(function(resultados) {
+        let datos = JSON.parse(resultados.contents)
+        return datos;
+    })
+    .then(function(datos) {
+        console.log(datos);
+        let titulo;
+        let foto;
+        let cantante;
+        for (let i = 0; i < 5; i++) {
+            titulo = datos.data[i].title;
+            foto = datos.data[i].cover_xl;
+            cantante = datos.data[i].artist.name
+
+            lista_albumes.innerHTML += `
+                <li>
+                    <h3>${titulo}</h3>
+                    <img src="${foto}" alt="${titulo}">
+                    <p>${cantante}</p>
+                </li>
+            `
+        }
 
     })
     .catch(function(error) {
@@ -51,11 +75,29 @@ fetch(proxy + url_canciones)
     })
 
 // Fetch ARTISTS
-fetch(proxy + url_canciones)
-    .then(function(data) {
-        return data.json()
+fetch(proxy + url_artistas)
+    .then(function(response) {
+        return response.json()
     })
     .then(function(resultados) {
+        let datos = JSON.parse(resultados.contents)
+        return datos;
+    })
+    .then(function(datos) {
+        let titulo;
+        let foto;
+        let cantante;
+        for (let i = 0; i < 5; i++) {
+            titulo = datos.data[i].name;
+            foto = datos.data[i].picture_xl;
+
+            lista_artistas.innerHTML += `
+                <li>
+                    <h3>${titulo}</h3>
+                    <img src="${foto}" alt="${titulo}">
+                </li>
+            `
+        }
 
     })
     .catch(function(error) {

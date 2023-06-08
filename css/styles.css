@@ -66,4 +66,7 @@ body {
     border-radius: 25px;
   }
 
-  
+  section ul img {
+    width: 150px;
+    height: 150px;
+}

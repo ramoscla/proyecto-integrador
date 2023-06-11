@@ -103,3 +103,19 @@ fetch(proxy + url_artistas)
     .catch(function(error) {
         console.log(error);
     })
+
+    let searchForm = document.querySelector('#search-form')
+    let searchInput = document.querySelector('#search-input')
+    
+    searchForm.addEventListener ('submit', function (event) { 
+        event.preventDefault();
+        if (searchInput.value.length === '') {
+            alert('Su campo se encuentra vacio.');
+        } else if (searchInput.value.length < 3) {
+            alert('Debes escribir al menos tres caracteres.');
+            
+        } else {
+            this.submit();
+        }
+        
+    })

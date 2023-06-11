@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Production | Home</title>
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,10 +16,12 @@
     <div class="logo">
       <img src="./img/supersound.png" alt="Logo del sitio">
     </div>
+    <div class="buscador">
     <form id="search-form" action="search-results.html" method="GET">
       <input type="text" id="search-input" name="search" placeholder="Buscar">
-      <button type="submit">Buscar</button>
+      <button type="submit" class="buscarBoton"><i class="fa fa-search"></i></button>
     </form>
+  </div>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -28,7 +31,7 @@
     </nav>
   </header>
   
-  <main>
+  <main class="inicio">
     <section class="contenedor-canciones">
       <h1>Top canciones</h1>
       <ul></ul>

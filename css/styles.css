@@ -1,90 +1,93 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-  header {
-    background-image: linear-gradient(to right, rgb(255, 172, 182) , rgb(255, 0, 0), rgb(255, 42, 184));
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 0;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-  }
+header {
+  background-image: linear-gradient(to right, rgb(255, 172, 182), rgb(255, 0, 0), rgb(255, 42, 184));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-  .logo img {
-    max-height: 150px;
-    margin: 0;
-    padding: 0;
-  }
- 
-  #search-form {
-    display: flex;
-    align-items: center;
-  }
-  
-  #search-input {
-    width: 410px;
-    height: 35px;
-    border: none;
-    margin: 0;
-    padding: 8px;
-  }
- 
- .buscarBoton {
+.logo img {
+  max-height: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 410px;
+  height: 35px;
+  border: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.buscarBoton {
   border: none;
   width: 41px;
   height: 35px;
   margin: 0;
   padding: 8px;
   background-color: rgb(232, 232, 232);
- }
-  nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    margin-right: 20px;
-
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: white;
-  }
-
-  
-  .integrantes {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    font-family: 'PT Sans', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    color: white;
-    background-image: linear-gradient(to right, rgb(255, 172, 182) , rgb(255, 0, 0), rgb(255, 42, 184));
-  }
-
-  section ul img {
-    width: 150px;
-    height: 150px;
 }
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.integrantes {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background-image: linear-gradient(to right, rgb(255, 172, 182), rgb(255, 0, 0), rgb(255, 42, 184));
+}
+
+section ul img {
+  width: 150px;
+  height: 150px;
+}
+
 nav {
   margin-right: 40px;
 }
@@ -92,25 +95,7 @@ nav {
 .inicio {
   font-family: 'PT Sans', sans-serif;
 }
-.generosMain {
-  font-family: 'PT Sans', sans-serif;
-  margin: 20px;
-}
 
-.contenedor-generos ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  
-}
-.generoTitulo {
-  margin-right: 30px;
-}
-.contenedor-generos li {
-  display: flex;
-  flex-wrap: wrap;
-  
-}
 
 h1 {
   font-family: 'Poppins', sans-serif;
@@ -161,8 +146,79 @@ section ul li a p {
 }
 
 .truncate {
-  white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
-  overflow: hidden; /* Oculta o texto que ultrapassa o contêiner */
-  text-overflow: ellipsis; /* Adiciona reticências (...) para indicar que o texto foi truncado */
-}  
+  white-space: nowrap;
+  /* Impede que o texto seja quebrado em várias linhas */
+  overflow: hidden;
+  /* Oculta o texto que ultrapassa o contêiner */
+  text-overflow: ellipsis;
+  /* Adiciona reticências (...) para indicar que o texto foi truncado */
+}
 
+.contenedor-generos li img {
+  width: 160px;
+  height: 160px;
+  margin: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.289), 0 6px 20px 0 rgba(0, 0, 0, 0.317);
+  border-radius: 6px;
+
+}
+
+.generoTitulo {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+
+}
+
+.contenedor-generos li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+  margin: 20px;
+  padding: 20px;
+
+}
+
+.contenedor-generos h3 {
+ background-color: rgba(202, 202, 202, 0.466);
+ padding: 8px;
+}
+
+.generosMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 15, 115);
+  background-color: rgb(250, 250, 250);
+  font-family: 'PT Sans', sans-serif;
+  margin: 20px;
+}
+
+.generosMain h1 {
+  text-align: center;
+  padding: 40px;
+  font-size: 50px;
+}
+
+
+.contenedor-generos ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+
+.generoArtistas {
+  list-style-type: none;
+}
+
+.nombreArtistaGenero a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+
+}

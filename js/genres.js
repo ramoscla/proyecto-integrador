@@ -13,23 +13,22 @@
      return response.json();
    })
    .then(function(data) {
-     let datos = JSON.parse(data.contents);
      
-     for (let i = 2; i < 6; i++) {
+     let datos = JSON.parse(data.contents);
+     console.log(datos.data);
+
+     for (let i = 1; i < datos.data.length; i++) {
        
             let generoTitulo = datos.data[i].name;
             let generoFoto = datos.data[i].picture;
       
             lista_generos.innerHTML += `
               <li>
-              <h3 class="generoTitulo" >${generoTitulo}</h3>
-              <img src="${generoFoto}" alt="${generoTitulo}">
+              <a class=generoTitulo href="./detail-genres.html?id=${datos.data[i].id}"><img src="${generoFoto}" alt="${generoTitulo}"></a>
+              <h3><a class=generoTitulo href="./detail-genres.html?id=${datos.data[i].id}">${generoTitulo}</a></h3>
               </li>
             `;
 
-     lista_generos.addEventListener('click', function() {
-        window.location.href = './detail-genres.html';
-      });
       
      }
    })

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music Production | Playlist</title>
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     </div>
     <form id="search-form" action="search-results.html" method="GET">
       <input type="text" id="search-input" name="search" placeholder="Buscar">
-      <button type="submit" class="buscarBoton"><i class="fa fa-search"></i></button>
+      <button type="submit">Buscar</button>
     </form>
     <nav>
       <ul>
@@ -28,10 +28,17 @@
     </nav>
   </header>
 
+  <main>
+    <section class="contenedor-canciones">
+      <h1>Playlist</h1>
+      <ul></ul>
+    </section>
+  </main>
+
   <footer>
     <p class="integrantes"> Bianca Pedemonte, Clara Ramos </p>
   </footer>
-  <script src="./js/playlis.js"></script>
+  <script src="./js/playlist.js"></script>
 </body>
 
 </html>

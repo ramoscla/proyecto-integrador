@@ -36,9 +36,9 @@ fetch(proxy + urlDetalle2)
 
         for (let i = 1; i < datos.data.length; i++) {
             generoArtistas.innerHTML += `<li>
-             <h3 class="nombreArtistaGenero"><a href="./detail-artist.html">${datos.data[i].name}</a></h3>
+             <h3 class="nombreArtistaGenero"><a href="./detail-artist.html?id=${datos.data[i].id}"> ${datos.data[i].name}</a></h3>
              <img src="${datos.data[i].picture}" alt="${datos.data[i].name}">
-   
+            
              </li>`;
         }
 

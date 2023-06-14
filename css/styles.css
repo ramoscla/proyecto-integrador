@@ -222,3 +222,16 @@ section ul li a p {
   color: rgb(255, 255, 255);
 
 }
+
+.detalleArtista {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  
+}
+
+.artistaDetalleLista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

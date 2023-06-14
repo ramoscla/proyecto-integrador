@@ -116,3 +116,53 @@ h1 {
   font-family: 'Poppins', sans-serif;
 }
 
+main {
+  background-color: #FFABB5;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 2vw;
+}
+
+section ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+section ul li {
+  list-style: none;
+  width: 18vw;
+}
+
+section ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+section ul li a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+section ul li a img {
+  width: 17vw;
+  height: 17vw;
+}
+
+section ul li a p {
+  text-align: center;
+}
+
+.truncate {
+  white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+  overflow: hidden; /* Oculta o texto que ultrapassa o contêiner */
+  text-overflow: ellipsis; /* Adiciona reticências (...) para indicar que o texto foi truncado */
+}  
+

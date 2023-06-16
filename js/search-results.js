@@ -67,9 +67,7 @@ let query = new URLSearchParams(window.location.search)
 let search = query.get('search')
 
 let proxy = 'https://api.allorigins.win/get?url='
-let scret_key = '4d3d37287d77a9575cc5d48b706a917a' // Secret Key
-let url = `https://api.deezer.com/search?q=${search}&secret_key=${scret_key}`
-
+let url = `https://api.deezer.com/search?q=${search}`
 let nodo_ul = document.querySelector('section ul')
 let nodo_imagen = document.querySelector('.cargando')
 

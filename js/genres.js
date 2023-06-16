@@ -15,12 +15,12 @@ searchForm.addEventListener('submit', function (event) {
 
 })
 
-//MODO OSCURO 
+//FUNCIONALIDADES DE LA PAGINA 
 
 let lista_generos = document.querySelector('.contenedor-generos ul');
 let proxy = 'https://api.allorigins.win/get?url=';
-let secret_key = 'cdae97f9508fa895f1b77e8427e66299';
-let url_genero = `https://api.deezer.com/genre?limit=5&secret_key=${secret_key}`;
+let url_genero = `https://api.deezer.com/genre/`;
+
 let generoTitulo = document.querySelector('.generoTitulo');
 let generoFoto = document.querySelector('.generoFoto');
 let generoLi = document.querySelector('.generoLi')
@@ -53,12 +53,13 @@ fetch(proxy + url_genero)
     console.log(error);
   });
 
+
+//MODO OSCURO 
+
 const modeToggle = document.querySelector('#mode-toggle');
 const body = document.querySelector('body');
 
-
 let main = document.querySelector('main');
-
 
 let preferredMode = localStorage.getItem('preferredMode');
 

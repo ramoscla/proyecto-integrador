@@ -16,51 +16,7 @@ searchForm.addEventListener('submit', function (event) {
 })
 
 //MODO OSCURO 
-const modeToggle = document.querySelector('#mode-toggle');
-const body = document.querySelector('body');
 
-let main = document.querySelector('main');
-let section = document.querySelector('section');
-
-let preferredMode = localStorage.getItem('preferredMode');
-
-if (preferredMode === 'dark-mode') {
-  enableDarkMode();
-
-} else {
-  enableLightMode();
-}
-
-function enableDarkMode() {
-  body.classList.add('dark-mode');
-  main.classList.add('dark-mode')
-  section.classList.add('dark-mode')
-  modeToggle.innerText = 'Modo Claro';
-
-}
-
-function enableLightMode() {
-  body.classList.remove('dark-mode');
-  main.classList.remove('dark-mode')
-  section.classList.remove('dark-mode')
-  modeToggle.innerText = 'Modo Oscuro';
-}
-
-function toggleMode() {
-  if (body.classList.contains('dark-mode')) {
-    enableLightMode();
-    preferredMode = 'light-mode';
-
-  } else {
-    enableDarkMode();
-    preferredMode = 'dark-mode';
-
-  }
-
-  localStorage.setItem('preferredMode', preferredMode);
-}
-
-modeToggle.addEventListener('click', toggleMode);
 
 //FUNCIONALIDADES DE LA PAGINA
 let query = new URLSearchParams(window.location.search)

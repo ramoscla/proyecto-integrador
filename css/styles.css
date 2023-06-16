@@ -457,8 +457,7 @@ h3 {
   background-color: rgba(255, 0, 149, 0.629);
 }
 
-#mode-toggle {
-  color: rgb(227, 1, 84);
+#btnMode {
   background-color: rgb(255, 255, 255);
   cursor: pointer;
   font-family: 'Poppins', sans-serif;

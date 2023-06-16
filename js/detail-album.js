@@ -17,33 +17,7 @@ searchForm.addEventListener('submit', function (event) {
 
 
 // Modo Oscuro
-function habilitarModoOscuro() {
-  body.classList.add('dark-mode');
-  main.classList.add('dark-mode');
-  contenedorAlbum.classList.add('dark-mode');
-  albumFicha.classList.add('dark-mode2');
-  modeToggle.innerText = 'Modo Claro';
-}
 
-function habilitarModoClaro() {
-  body.classList.remove('dark-mode');
-  main.classList.remove('dark-mode');
-  contenedorAlbum.classList.remove('dark-mode');
-  albumFicha.classList.remove('dark-mode2');
-  modeToggle.innerText = 'Modo Oscuro';
-}
-
-function cambiarModo() {
-  if (body.classList.contains('dark-mode')) {
-    habilitarModoClaro();
-    preferredMode = 'light-mode';
-  } else {
-    habilitarModoOscuro();
-    preferredMode = 'dark-mode';
-  }
-
-  localStorage.setItem('preferredMode', preferredMode);
-}
 
 // Funcionalidad de la página
 let qs = location.search;

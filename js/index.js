@@ -16,55 +16,6 @@ searchForm.addEventListener('submit', function (event) {
 })
 
 //MODO OSCURO
-const modeToggle = document.querySelector('#mode-toggle');
-const body = document.querySelector('body');
-
-
-let inicioCanciones = document.querySelector('.contenedor-canciones');
-let inicioAlbumes = document.querySelector('.contenedor-albumes');
-let inicioArtistas = document.querySelector('.contenedor-artistas');
-
-let preferredMode = localStorage.getItem('preferredMode');
-
-if (preferredMode === 'dark-mode') {
-    enableDarkMode();
-
-} else {
-    enableLightMode();
-}
-
-function enableDarkMode() {
-    body.classList.add('dark-mode');
-    inicioCanciones.classList.add('dark-mode')
-    inicioAlbumes.classList.add('dark-mode')
-    inicioArtistas.classList.add('dark-mode')
-    modeToggle.innerText = 'Modo Claro';
-
-}
-
-function enableLightMode() {
-    body.classList.remove('dark-mode');
-    inicioCanciones.classList.remove('dark-mode')
-    inicioAlbumes.classList.remove('dark-mode')
-    inicioArtistas.classList.remove('dark-mode')
-    modeToggle.innerText = 'Modo Oscuro';
-}
-
-function toggleMode() {
-    if (body.classList.contains('dark-mode')) {
-        enableLightMode();
-        preferredMode = 'light-mode';
-
-    } else {
-        enableDarkMode();
-        preferredMode = 'dark-mode';
-
-    }
-
-    localStorage.setItem('preferredMode', preferredMode);
-}
-
-modeToggle.addEventListener('click', toggleMode);
 
 // FUNCIONALIDADES DE LA PAGINA
 let lista_canciones = document.querySelector('.contenedor-canciones ul')

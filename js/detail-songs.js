@@ -89,7 +89,24 @@ fetch(proxy + urlDetalle)
     imagen.src = data.album.cover_medium;
     aArtista.innerText = 'Artista: ' + data.artist.name;
     aAlbum.innerText = 'Disco: ' + data.album.title;
-  })
+   
+  //preview de 30 segundos
+  let preview= document.querySelector(".preview")
+  let previewSonido = document.querySelector("#previewSonido")
+
+  let previewUrl =data.preview;
+  if(previewUrl){
+      previewSonido.src = previewUrl;
+
+      previewSudio.load ();
+
+      previewContainer.style.display = "block"
+  }else{
+      previewContainer.style.display = "none";
+  }}
+  )
+
+  
   .catch(function(error) {
     console.log(error);
   });

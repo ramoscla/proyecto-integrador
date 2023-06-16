@@ -50,7 +50,6 @@ for (let i = 0; i < lista_playlist_ids.length; i++) {
             console.log(error)
         })
 }
-
 const modeToggle = document.querySelector('#mode-toggle');
 const body = document.querySelector('body');
 

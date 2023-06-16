@@ -1,3 +1,72 @@
+//FORMULARIO 
+let searchForm = document.querySelector('#search-form')
+let searchInput = document.querySelector('#search-input')
+
+searchForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (searchInput.value.length === '') {
+        alert('Su campo se encuentra vacio.');
+    } else if (searchInput.value.length < 3) {
+        alert('Debes escribir al menos tres caracteres.');
+
+    } else {
+        this.submit();
+    }
+
+})
+
+//MODO OSCURO
+const modeToggle = document.querySelector('#mode-toggle');
+const body = document.querySelector('body');
+
+
+let inicioCanciones = document.querySelector('.contenedor-canciones');
+let inicioAlbumes = document.querySelector('.contenedor-albumes');
+let inicioArtistas = document.querySelector('.contenedor-artistas');
+
+let preferredMode = localStorage.getItem('preferredMode');
+
+if (preferredMode === 'dark-mode') {
+    enableDarkMode();
+
+} else {
+    enableLightMode();
+}
+
+function enableDarkMode() {
+    body.classList.add('dark-mode');
+    inicioCanciones.classList.add('dark-mode')
+    inicioAlbumes.classList.add('dark-mode')
+    inicioArtistas.classList.add('dark-mode')
+    modeToggle.innerText = 'Modo Claro';
+
+}
+
+function enableLightMode() {
+    body.classList.remove('dark-mode');
+    inicioCanciones.classList.remove('dark-mode')
+    inicioAlbumes.classList.remove('dark-mode')
+    inicioArtistas.classList.remove('dark-mode')
+    modeToggle.innerText = 'Modo Oscuro';
+}
+
+function toggleMode() {
+    if (body.classList.contains('dark-mode')) {
+        enableLightMode();
+        preferredMode = 'light-mode';
+
+    } else {
+        enableDarkMode();
+        preferredMode = 'dark-mode';
+
+    }
+
+    localStorage.setItem('preferredMode', preferredMode);
+}
+
+modeToggle.addEventListener('click', toggleMode);
+
+// FUNCIONALIDADES DE LA PAGINA
 let lista_canciones = document.querySelector('.contenedor-canciones ul')
 let lista_albumes = document.querySelector('.contenedor-albumes ul')
 let lista_artistas = document.querySelector('.contenedor-artistas ul')
@@ -12,14 +81,14 @@ let url_artistas = `https://api.deezer.com/chart/0/artists?limit=5&secret_key=${
 
 // Fetch CANCIONES
 fetch(proxy + url_canciones)
-    .then(function(response) {
+    .then(function (response) {
         return response.json()
     })
-    .then(function(resultados) {
+    .then(function (resultados) {
         let datos = JSON.parse(resultados.contents)
         return datos;
     })
-    .then(function(datos) {
+    .then(function (datos) {
         let titulo;
         let foto;
         let cantante;
@@ -27,7 +96,7 @@ fetch(proxy + url_canciones)
             titulo = datos.data[i].title_short;
             foto = datos.data[i].album.cover_xl;
             cantante = datos.data[i].artist.name
-            
+
             lista_canciones.innerHTML += `
                 <li> <a href= "./detail-songs.html?id=${datos.data[i].id}" > 
                     <h3>${titulo}</h3> 
@@ -37,20 +106,20 @@ fetch(proxy + url_canciones)
             `
         }
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     })
 
 // Fetch ALBUMES
 fetch(proxy + url_albumes)
-    .then(function(response) {
+    .then(function (response) {
         return response.json()
     })
-    .then(function(resultados) {
+    .then(function (resultados) {
         let datos = JSON.parse(resultados.contents)
         return datos;
     })
-    .then(function(datos) {
+    .then(function (datos) {
         console.log(datos);
         let titulo;
         let foto;
@@ -73,20 +142,20 @@ fetch(proxy + url_albumes)
         }
 
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     })
 
 // Fetch ARTISTS
 fetch(proxy + url_artistas)
-    .then(function(response) {
+    .then(function (response) {
         return response.json()
     })
-    .then(function(resultados) {
+    .then(function (resultados) {
         let datos = JSON.parse(resultados.contents)
         return datos;
     })
-    .then(function(datos) {
+    .then(function (datos) {
         let titulo;
         let foto;
         let cantante;
@@ -103,74 +172,10 @@ fetch(proxy + url_artistas)
         }
 
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     })
 
-    let searchForm = document.querySelector('#search-form')
-    let searchInput = document.querySelector('#search-input')
-    
-    searchForm.addEventListener ('submit', function (event) { 
-        event.preventDefault();
-        if (searchInput.value.length === '') {
-            alert('Su campo se encuentra vacio.');
-        } else if (searchInput.value.length < 3) {
-            alert('Debes escribir al menos tres caracteres.');
-            
-        } else {
-            this.submit();
-        }
-        
-    })
 
 
-    const modeToggle = document.querySelector('#mode-toggle');
-    const body = document.querySelector('body');
 
-    
-    let inicioCanciones =  document.querySelector('.contenedor-canciones');
-    let inicioAlbumes =  document.querySelector('.contenedor-albumes');
-    let inicioArtistas =  document.querySelector('.contenedor-artistas');
-    
-    let preferredMode = localStorage.getItem('preferredMode');
-
-    if (preferredMode === 'dark-mode') {
-      enableDarkMode();
-      
-    } else {
-      enableLightMode();
-    }
-    
-    function enableDarkMode() {
-      body.classList.add('dark-mode');
-      inicioCanciones.classList.add('dark-mode')
-      inicioAlbumes.classList.add('dark-mode')
-      inicioArtistas.classList.add('dark-mode')
-      modeToggle.innerText = 'Modo Claro';
-    
-    }
-    
-    function enableLightMode() {
-      body.classList.remove('dark-mode');
-      inicioCanciones.classList.remove('dark-mode')
-      inicioAlbumes.classList.remove('dark-mode')
-      inicioArtistas.classList.remove('dark-mode')
-      modeToggle.innerText = 'Modo Oscuro';
-    }
-    
-    function toggleMode() {
-      if (body.classList.contains('dark-mode')) {
-        enableLightMode();
-        preferredMode = 'light-mode';
-
-      } else {  
-        enableDarkMode();
-        preferredMode = 'dark-mode';
-      
-      }
-    
-      localStorage.setItem('preferredMode', preferredMode);
-    }
-    
-    modeToggle.addEventListener('click', toggleMode);
-    

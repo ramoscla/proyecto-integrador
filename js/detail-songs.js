@@ -1,3 +1,70 @@
+//FORMULARIO 
+let searchForm = document.querySelector('#search-form')
+let searchInput = document.querySelector('#search-input')
+
+searchForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  if (searchInput.value.length === '') {
+    alert('Su campo se encuentra vacio.');
+  } else if (searchInput.value.length < 3) {
+    alert('Debes escribir al menos tres caracteres.');
+
+  } else {
+    this.submit();
+  }
+
+})
+
+//MODO OSCURO
+const modeToggle = document.querySelector('#mode-toggle');
+const body = document.querySelector('body');
+
+
+let main = document.querySelector('main');
+let section = document.querySelector('section');
+
+
+let preferredMode = localStorage.getItem('preferredMode');
+
+if (preferredMode === 'dark-mode') {
+  enableDarkMode();
+
+} else {
+  enableLightMode();
+}
+
+function enableDarkMode() {
+  body.classList.add('dark-mode');
+  main.classList.add('dark-mode')
+  section.classList.add('dark-mode')
+  modeToggle.innerText = 'Modo Claro';
+
+}
+
+function enableLightMode() {
+  body.classList.remove('dark-mode');
+  main.classList.remove('dark-mode')
+  section.classList.remove('dark-mode')
+  modeToggle.innerText = 'Modo Oscuro';
+}
+
+function toggleMode() {
+  if (body.classList.contains('dark-mode')) {
+    enableLightMode();
+    preferredMode = 'light-mode';
+
+  } else {
+    enableDarkMode();
+    preferredMode = 'dark-mode';
+
+  }
+
+  localStorage.setItem('preferredMode', preferredMode);
+}
+
+modeToggle.addEventListener('click', toggleMode);
+
+// FUNCIONALIDADES DE LA PAGINA
 let query = new URLSearchParams(window.location.search)
 let id = query.get('id')
 
@@ -12,89 +79,44 @@ let nodo_p_a = document.querySelector('section p a') // Album
 let nodo_button = document.querySelector('section button') // Agregar a playlist
 
 fetch(proxy + url)
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(resultados) {
-        let datos = JSON.parse(resultados.contents)
-        return datos;
-    })
-    .then(function(datos) {
-        nodo_imagen.src = datos.album.cover_medium
-        nodo_h1.textContent = datos.title_short
-        nodo_h6_a.textContent = datos.artist.name
-        nodo_h6_a.href = `detail-artist.html?id=${datos.artist.id}`
-        nodo_p_a.textContent = datos.album.title
-        nodo_p_a.href = `detail-album.html?id=${datos.album.id}`
+  .then(function (response) {
+    return response.json()
+  })
+  .then(function (resultados) {
+    let datos = JSON.parse(resultados.contents)
+    return datos;
+  })
+  .then(function (datos) {
+    nodo_imagen.src = datos.album.cover_medium
+    nodo_h1.textContent = datos.title_short
+    nodo_h6_a.textContent = datos.artist.name
+    nodo_h6_a.href = `detail-artist.html?id=${datos.artist.id}`
+    nodo_p_a.textContent = datos.album.title
+    nodo_p_a.href = `detail-album.html?id=${datos.album.id}`
 
-        let lista_playlist_ids = localStorage.getItem('playlist_ids') // "['123','4123','12523','12']"
-        if (JSON.parse(lista_playlist_ids) === null) { // ['123','4123','12523','12']
-            lista_playlist_ids = []
-        } else {
-            lista_playlist_ids = JSON.parse(lista_playlist_ids) // ['123','4123','12523','12']
-        }
-
-        nodo_button.addEventListener('click', function() {
-            if (lista_playlist_ids.includes(datos.id)) {
-                let posicion_id = lista_playlist_ids.indexOf(datos.id) // 2
-                lista_playlist_ids.splice(posicion_id, 1) // ['123','4123','12']
-            } else {
-                lista_playlist_ids.push(datos.id) // ['123','4123','12523','12', '9999999']
-            }
-            let cancion_string = JSON.stringify(lista_playlist_ids) // "['123','4123','12523','12', '9999999']"
-            localStorage.setItem('playlist_ids', cancion_string) 
-            console.log(lista_playlist_ids)
-        })
-
-    })
-    .catch(function(error) {
-        console.log(error)
-    }) 
-    const modeToggle = document.querySelector('#mode-toggle');
-    const body = document.querySelector('body');
-   
-    
-    let main =  document.querySelector('main');
-    let section =  document.querySelector('section');
-   
-    
-    let preferredMode = localStorage.getItem('preferredMode');
-   
-    if (preferredMode === 'dark-mode') {
-      enableDarkMode();
-      
+    let lista_playlist_ids = localStorage.getItem('playlist_ids') // "['123','4123','12523','12']"
+    if (JSON.parse(lista_playlist_ids) === null) { // ['123','4123','12523','12']
+      lista_playlist_ids = []
     } else {
-      enableLightMode();
+      lista_playlist_ids = JSON.parse(lista_playlist_ids) // ['123','4123','12523','12']
     }
-    
-    function enableDarkMode() {
-      body.classList.add('dark-mode');
-      main.classList.add('dark-mode')
-      section.classList.add('dark-mode')
-      modeToggle.innerText = 'Modo Claro';
-    
-    }
-    
-    function enableLightMode() {
-      body.classList.remove('dark-mode');
-      main.classList.remove('dark-mode')
-      section.classList.remove('dark-mode')
-      modeToggle.innerText = 'Modo Oscuro';
-    }
-    
-    function toggleMode() {
-      if (body.classList.contains('dark-mode')) {
-        enableLightMode();
-        preferredMode = 'light-mode';
-   
-      } else {  
-        enableDarkMode();
-        preferredMode = 'dark-mode';
-      
+
+    nodo_button.addEventListener('click', function () {
+      if (lista_playlist_ids.includes(datos.id)) {
+        let posicion_id = lista_playlist_ids.indexOf(datos.id) // 2
+        lista_playlist_ids.splice(posicion_id, 1) // ['123','4123','12']
+      } else {
+        lista_playlist_ids.push(datos.id) // ['123','4123','12523','12', '9999999']
       }
-    
-      localStorage.setItem('preferredMode', preferredMode);
-    }
-    
-    modeToggle.addEventListener('click', toggleMode);
-    
+      let cancion_string = JSON.stringify(lista_playlist_ids) // "['123','4123','12523','12', '9999999']"
+      localStorage.setItem('playlist_ids', cancion_string)
+      console.log(lista_playlist_ids)
+    })
+
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+
+
+

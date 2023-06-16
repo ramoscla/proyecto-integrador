@@ -62,9 +62,12 @@ fetch(proxy + url_albumes)
 
             lista_albumes.innerHTML += `
                 <li>
-                <a href= "./detail-album.html?id=${datos.data[i].id}" <h3>${titulo}</h3>  </a>
-                    <img src="${foto}" alt="${titulo}">
-                    <a href= "./detail-artist.html?id=${datos.data[i].artist.id}" <p>${cantante}</p>  </a>
+                <a href= "./detail-album.html?id=${datos.data[i].id}"> <h3>${titulo}</h3>  </a>
+                
+                <a href= "./detail-album.html?id=${datos.data[i].id}"> <img src="${foto}" alt="${titulo}"> </a>
+                
+                <a href= "./detail-artist.html?id=${datos.data[i].artist.id}"> <p>${cantante}</p>  </a>
+                
                 </li>
             `
         }
@@ -92,9 +95,9 @@ fetch(proxy + url_artistas)
             foto = datos.data[i].picture_xl;
 
             lista_artistas.innerHTML += `
-                <li> <a href= "./detail-artist.html?id=${datos.data[i].id}" > 
-                <h3>${titulo}</h3> </a>
-                <img src="${foto}" alt="${titulo}">  
+                <li> 
+                <a href= "./detail-artist.html?id=${datos.data[i].id}" >  <h3>${titulo}</h3> </a>
+                <a href= "./detail-artist.html?id=${datos.data[i].id}" > <img src="${foto}" alt="${titulo}"> </a>
                 </li>
             `
         }
@@ -119,3 +122,55 @@ fetch(proxy + url_artistas)
         }
         
     })
+
+
+    const modeToggle = document.querySelector('#mode-toggle');
+    const body = document.querySelector('body');
+
+    
+    let inicioCanciones =  document.querySelector('.contenedor-canciones');
+    let inicioAlbumes =  document.querySelector('.contenedor-albumes');
+    let inicioArtistas =  document.querySelector('.contenedor-artistas');
+    
+    let preferredMode = localStorage.getItem('preferredMode');
+
+    if (preferredMode === 'dark-mode') {
+      enableDarkMode();
+      
+    } else {
+      enableLightMode();
+    }
+    
+    function enableDarkMode() {
+      body.classList.add('dark-mode');
+      inicioCanciones.classList.add('dark-mode')
+      inicioAlbumes.classList.add('dark-mode')
+      inicioArtistas.classList.add('dark-mode')
+      modeToggle.innerText = 'Modo Claro';
+    
+    }
+    
+    function enableLightMode() {
+      body.classList.remove('dark-mode');
+      inicioCanciones.classList.remove('dark-mode')
+      inicioAlbumes.classList.remove('dark-mode')
+      inicioArtistas.classList.remove('dark-mode')
+      modeToggle.innerText = 'Modo Oscuro';
+    }
+    
+    function toggleMode() {
+      if (body.classList.contains('dark-mode')) {
+        enableLightMode();
+        preferredMode = 'light-mode';
+
+      } else {  
+        enableDarkMode();
+        preferredMode = 'dark-mode';
+      
+      }
+    
+      localStorage.setItem('preferredMode', preferredMode);
+    }
+    
+    modeToggle.addEventListener('click', toggleMode);
+    

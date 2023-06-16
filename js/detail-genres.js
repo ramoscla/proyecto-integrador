@@ -13,14 +13,13 @@ fetch(proxy + urlDetalle)
     })
     .then(function (data) {
         let datos = JSON.parse(data.contents);
-        let generoDetalleNombre = document.querySelector('#generoDetalleNombre');
+        let generoDetalleNombre = document.querySelector('.generoDetalleNombre');
 
-        generoDetalleNombre.innerText = datos.name;
+        generoDetalleNombre.innerText += datos.name;
 
     })
     .catch(function (error) {
         console.log(error);
-
     }
     )
 
@@ -37,7 +36,7 @@ fetch(proxy + urlDetalle2)
         for (let i = 1; i < datos.data.length; i++) {
             generoArtistas.innerHTML += `<li>
              <h3 class="nombreArtistaGenero"><a href="./detail-artist.html?id=${datos.data[i].id}"> ${datos.data[i].name}</a></h3>
-             <img src="${datos.data[i].picture}" alt="${datos.data[i].name}">
+             <img class='fotoArtistaGenero' src="${datos.data[i].picture}" alt="${datos.data[i].name}">
             
              </li>`;
         }

@@ -8,7 +8,8 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to right, rgb(255, 172, 182), rgb(255, 0, 0), rgb(255, 42, 184));
+  background-image: linear-gradient(to right, rgb(253, 208, 169), rgb(255, 0, 0), rgb(255, 42, 184));
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.289), 0 6px 20px 0 rgba(0, 0, 0, 0.317);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +81,7 @@ nav ul li a {
   font-weight: bold;
   font-size: 16px;
   color: white;
-  background-image: linear-gradient(to right, rgb(255, 172, 182), rgb(255, 0, 0), rgb(255, 42, 184));
+  background-image: linear-gradient(to right, rgb(253, 208, 169), rgb(255, 0, 0), rgb(255, 42, 184));
 }
 
 section ul img {
@@ -97,12 +98,13 @@ nav {
 }
 
 
-h1 {
+h1,
+h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-main {
-  background-color: #FFABB5;
+body {
+  background-color: #ffebeb;
 }
 
 section {
@@ -159,13 +161,13 @@ section ul li a p {
   height: 160px;
   margin: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.289), 0 6px 20px 0 rgba(0, 0, 0, 0.317);
-  border-radius: 6px;
+  border-radius: 100px;
 
 }
 
 .generoTitulo {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: whitesmoke;
   font-size: 20px;
   margin: 0;
   text-align: center;
@@ -183,8 +185,8 @@ section ul li a p {
 }
 
 .contenedor-generos h3 {
- background-color: rgba(202, 202, 202, 0.466);
- padding: 8px;
+  background-image: linear-gradient(rgba(255, 0, 0, 0.852), rgba(255, 42, 184, 0.844));
+  padding: 8px;
 }
 
 .generosMain {
@@ -201,7 +203,7 @@ section ul li a p {
 .generosMain h1 {
   text-align: center;
   padding: 40px;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 
@@ -219,19 +221,116 @@ section ul li a p {
 
 .nombreArtistaGenero a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 
 }
+
 
 .detalleArtista {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  
+  align-self: center;
+  border-radius: 2px;
+  width: 700px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 123, 0.694), 0 6px 20px 0 rgba(255, 0, 89, 0.758);
+  background-color: white;
+
+}
+
+.fotoArtistaGenero {
+  border-radius: 50%;
+}
+
+.fotoArtista {
+  margin-bottom: 20px;
 }
 
 .artistaDetalleLista {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+
+.artistaDetalleLista li,
+.topAlbumnes p {
+  font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
+  margin: 0;
+}
+
+.topAlbumnes p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 23px;
+  color: black;
+
+}
+
+.artistaDetalleLista li a {
+  color: black;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.detalleGeneroMain h1,
+.detalleArtistaMain h1 {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 50px;
+  margin-bottom: 0;
+  color: rgb(0, 0, 0);
+
+}
+
+.generoDetalleNombre {
+  text-align: center;
+  font-size: 38px;
+  margin-top: 0;
+}
+
+.generoArtistas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+
+.generoArtistas li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 15vw;
+  height: 30vh;
+  border-radius: 2px;
+  background-color: white;
+  font-family: 'PT Sans', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 123, 0.289), 0 6px 20px 0 rgba(255, 0, 89, 0.317);
+
+
+}
+
+.topAlbumnes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  margin-top: 55px;
+  padding-top: 30px;
+}
+
+.nombreArtista {
+  font-size: 35px;
 }

@@ -10,15 +10,15 @@ fetch(proxy + urlDetalle)
     return response.json();
   })
   .then(function(data) {
-    let nombreArtista = document.querySelector('#nombreArtista');
+    let nombreArtista = document.querySelector('.nombreArtista');
     let detalleArtista = document.querySelector('.detalleArtista');
     
     detalleArtista.innerHTML += `
-    <div>
-    <h2 id="nombreArtista">${data.name}</h2>
+    <div class='foto-y-nombre-artista'>
+    <h2 class="nombreArtista">${data.name}</h2>
     <img class='fotoArtista' src="${data.picture_medium}" alt=""> 
     </div>`;
-    
+
 })
 
   .catch(function(error) {

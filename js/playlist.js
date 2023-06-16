@@ -65,58 +65,45 @@ function toggleMode() {
 modeToggle.addEventListener('click', toggleMode);
 
 //FUNCIONALIDADES DE LA PAGINA
-let lista_playlist_ids = localStorage.getItem('playlist_ids') // "['123','4123','12523','12']"
-if (JSON.parse(lista_playlist_ids) === null) { // ['123','4123','12523','12']
-  lista_playlist_ids = []
-} else {
-  lista_playlist_ids = JSON.parse(lista_playlist_ids) // ['123','4123','12523','12']
-}
 
-console.log(lista_playlist_ids)
+let recuperoStorage = localStorage.getItem('favoritos');
 
-let nodo_ul = document.querySelector('.contenedor-canciones ul')
+let favoritos = JSON.parse(recuperoStorage)
 
-if (lista_playlist_ids.length === 0) {
-  nodo_ul.innerHTML = '<h2>No hay canciones en la playlist</h2>'
-}
+let sectionLista = document.querySelector('#lista');
 
-let proxy = 'https://api.allorigins.win/get?url='
-let scret_key = '4d3d37287d77a9575cc5d48b706a917a' // Secret Key
-let url
-
-
-for (let i = 0; i < lista_playlist_ids.length; i++) {
-  url = `https://api.deezer.com/track/${lista_playlist_ids[i]}&secret_key=${scret_key}`
+let cancionesFavoritas = '';
+ 
+if (favoritos == null || favoritos.length == 0) {
+    section.innerHTML = '<p>No hay favoritos seleccionados</p>'
+} else { for (let i = 0; i < favoritos.length; i++) {
+  
+  let proxy = 'https://api.allorigins.win/raw?url=';
+  let url = `https://api.deezer.com/track/${favoritos[i]}`;
 
   fetch(proxy + url)
-    .then(function (response) {
-      return response.json()
-    })
-    .then(function (resultados) {
-      let datos = JSON.parse(resultados.contents)
-      return datos;
-    })
-    .then(function (datos) {
-      let titulo = datos.title_short;
-      let foto = datos.album.cover_xl;
-      let cantante = datos.artist.name
+  .then(function(response) {
+      return response.json();
+  })
+  .then(function(data) {
+      console.log(data);
 
-      nodo_ul.innerHTML += `
-                    <li>
-                        <a href="detail-songs.html?id=${lista_playlist_ids[i]}">
-                            <h3>${titulo}</h3>
-                            <img src="${foto}" alt="${titulo}">
-                            <a href="detail-artist.html?id=${datos.artist.id}">
-                                ${cantante}
-                            </a>
-                        </a>
-                    </li>
-                `
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
+     cancionesFavoritas +=      `<li class='lista-fav'>  
+                                  <a href= "./detail-songs.html?id=${data.id}" > <img src=${data.album.cover} alt='' /> </a>
+                                  <a href= "./detail-songs.html?id=${data.id}" > <p> ${data.artist.name}</p> </a>
+                                  <h3>S ${data.album.title} </h3>
+              
+                              </li>` ;
+
+      sectionLista.innerHTML = cancionesFavoritas;
+      
+  })
+  .catch(function(error) {
+      console.log(error);
+  });
+  
+}
 }
 
 
-
+    

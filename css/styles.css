@@ -435,6 +435,70 @@ h3 {
   width: 160px;
 }
 
+#lista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-image: linear-gradient(to right, rgba(238, 169, 253, 0.808), rgba(255, 0, 0, 0.593), rgba(255, 42, 184, 0.654));
+  
+}
+
+#lista li {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  padding: 20px;
+  background-color: rgb(215, 215, 215);
+  box-shadow: 0 4px 8px 0 rgba(32, 32, 32, 0.289), 0 6px 20px 0 rgba(44, 44, 44, 0.317);
+  border-radius: 4px;
+  
+}
+#lista li a {
+  font-family:  'Poppins', sans-serif;
+  color: black;
+}
+#lista li h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+ .canciones-d #fav{
+  font-family:  'Poppins', sans-serif;
+  width: 100px;
+  height: 80px;
+
+}
+.canciones-d section a {
+  text-decoration: none;
+  font-family:  'Poppins', sans-serif;
+  font-size: 15px;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+}
+.canciones-d section {
+  display: flex;
+  flex-direction: row;
+}
+.canciones-d section div {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.canciones-d h1{
+  font-size: 30px;
+}
+.canciones-d h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; 
+  font-size: 20px;
+  margin: 10px;
+}
+
+.canciones-d section {
+  background-color: #fbc0e1;
+}
+
 /* Media Queris */
 @media (max-width: 450px) {
   /* HEADER */

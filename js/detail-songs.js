@@ -113,9 +113,11 @@ fav.addEventListener('click', function() {
       let indice = favoritos.indexOf(id)
       favoritos.splice(indice, 1);
       fav.innerText = 'Agregar a favorito'
+      fav.style.backgroundColor = 'lightyellow'
   } else {
       favoritos.push(id);
       fav.innerText = 'Quitar de favorito'
+      fav.style.backgroundColor = 'rgb(255, 0, 174)'
   }
 
   let favoritosToString = JSON.stringify(favoritos);

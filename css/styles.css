@@ -81,7 +81,7 @@ nav ul li a {
   font-weight: bold;
   font-size: 16px;
   color: white;
-  background-image: linear-gradient(to right,rgb(238, 169, 253), rgb(255, 0, 0), rgb(255, 42, 184));
+  background-image: linear-gradient(to right, rgb(238, 169, 253), rgb(255, 0, 0), rgb(255, 42, 184));
 }
 
 section ul img {
@@ -344,7 +344,7 @@ a {
 .contenedor-detalle-albumes {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .detalleAlbum {
@@ -357,7 +357,7 @@ a {
   border-radius: 2px;
   margin: 20px;
   font-family: 'PT Sans', sans-serif;
-  
+
 }
 
 .mainDetalleAlbum h1 {
@@ -371,37 +371,40 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  
+
+
 }
+
 .album-canciones h3 {
   font-size: 24px;
   font-family: 'Poppins', sans-serif;
 }
+
 .listaCancionesAlbum li {
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
 }
+
 .listaCancionesAlbum li a {
   color: black;
 }
 
 h3 {
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 
 .dark-mode {
   background-color: #333;
   color: rgb(255, 0, 140);
-  
+
 }
 
-.dark-mode li a{
+.dark-mode li a {
   color: rgb(212, 212, 212);
 }
 
@@ -430,4 +433,81 @@ h3 {
   border: none;
   border-radius: 5px;
   width: 160px;
+}
+
+/* Media Queris */
+@media (max-width: 450px) {
+  /* HEADER */
+  body {
+    width: 450px;
+  }
+
+  header .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header nav ul {
+    display: flex;
+    width: fit-content;
+
+  }
+
+  #mode-toggle {
+    background-color: #fbc0e1;
+    font-size: 10px;
+    width: fit-content;
+
+  }
+
+  #search-input,
+  .buscarBoton {
+    width: fit-content;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  /*PAGINAS */
+  .inicio section ul, .contenedor-generos ul, .generoArtistas  {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .inicio section li,.contenedor-generos li, .generoArtistas li{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: auto;
+    text-overflow: ellipsis;
+  }
+
+  .contenedor-generos li {
+    margin: -24px;
+  }
+  .generoArtistas li {
+    width: 200px;
+    height: 70px;
+    margin: 2px;
+  }
+
+  .inicio section li img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contenedor-generos img, .generoArtistas li img, .detalleArtistaMain img,.detalleAlbum img{
+    display: none;
+  }
+
+  .detalleArtista, .detalleAlbum{
+    flex-direction: column;
+    width: 300px;
+  }
+
 }

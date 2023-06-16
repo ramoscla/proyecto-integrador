@@ -29,10 +29,10 @@ fetch(proxy + url_canciones)
             cantante = datos.data[i].artist.name
             
             lista_canciones.innerHTML += `
-                <li>
-                    <h3>${titulo}</h3>
-                    <img src="${foto}" alt="${titulo}">
-                    <p>${cantante}</p>
+                <li> <a href= "./detail-songs.html?id=${datos.data[i].id}" > 
+                    <h3>${titulo}</h3> 
+                    <img src="${foto}" alt="${titulo}"> </a>
+                    <a href= "./detail-artist.html?id=${datos.data[i].artist.id}" <p>${cantante}</p>  </a>
                 </li>
             `
         }
@@ -58,13 +58,13 @@ fetch(proxy + url_albumes)
         for (let i = 0; i < 5; i++) {
             titulo = datos.data[i].title;
             foto = datos.data[i].cover_xl;
-            cantante = datos.data[i].artist.name
+            cantante = datos.data[i].artist.name;
 
             lista_albumes.innerHTML += `
                 <li>
-                    <h3>${titulo}</h3>
+                <a href= "./detail-album.html?id=${datos.data[i].id}" <h3>${titulo}</h3>  </a>
                     <img src="${foto}" alt="${titulo}">
-                    <p>${cantante}</p>
+                    <a href= "./detail-artist.html?id=${datos.data[i].artist.id}" <p>${cantante}</p>  </a>
                 </li>
             `
         }
@@ -92,9 +92,9 @@ fetch(proxy + url_artistas)
             foto = datos.data[i].picture_xl;
 
             lista_artistas.innerHTML += `
-                <li>
-                    <h3>${titulo}</h3>
-                    <img src="${foto}" alt="${titulo}">
+                <li> <a href= "./detail-artist.html?id=${datos.data[i].id}" > 
+                <h3>${titulo}</h3> </a>
+                <img src="${foto}" alt="${titulo}">  
                 </li>
             `
         }

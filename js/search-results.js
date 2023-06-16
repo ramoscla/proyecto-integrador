@@ -41,10 +41,24 @@ fetch(proxy + url)
                                 </a>
                             </a>
                         </li>
-                    `
+
+                    ` 
+                   
+                   
+
             }
         }
+        nodo_imagen.style.display = 'none';
     })
     .catch(function(error) {
         console.log(error)
-    })
+    });
+
+    let agregarNombre= document.querySelector(".contenedor_canciones");
+    {
+agregarNombre.innerHTML += `${search}`
+    };
+                    
+                    
+                    
+    

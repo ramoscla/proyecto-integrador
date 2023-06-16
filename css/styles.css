@@ -255,7 +255,8 @@ section ul li a img {
 }
 
 .detalleGeneroMain h1,
-.detalleArtistaMain h1 {
+.detalleArtistaMain h1{
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-size: 25px;
   padding-top: 50px;
@@ -263,7 +264,9 @@ section ul li a img {
   color: rgb(0, 0, 0);
 
 }
-
+.detalleGeneroMain h2 {
+  font-family: 'Poppins', sans-serif;
+}
 .generoDetalleNombre {
   text-align: center;
   font-size: 38px;
@@ -303,7 +306,8 @@ section ul li a img {
 }
 
 .nombreArtista {
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Poppins', sans-serif;
+  ;
   font-size: 35px;
 }
 
@@ -403,7 +407,8 @@ section ul li a img {
 }
 
 .canciones-d h1 {
-  font-family: 'Poppins', sans-serif;;
+  font-family: 'Poppins', sans-serif;
+  ;
   font-size: 40px;
 }
 

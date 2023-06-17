@@ -15,7 +15,6 @@ searchForm.addEventListener('submit', function (event) {
 
 })
 
-//MODO OSCURO
 
 // FUNCIONALIDADES DE LA PAGINA
 let lista_canciones = document.querySelector('.contenedor-canciones ul')
@@ -128,5 +127,4 @@ fetch(proxy + url_artistas)
     })
 
 
-
-
+//MODO OSCURO

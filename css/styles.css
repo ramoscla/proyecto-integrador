@@ -431,50 +431,6 @@ h3 {
   text-overflow: ellipsis;
 }
 
-/* MODO OSCURO */
-.dark-mode {
-  background-color: #333;
-  color: rgb(255, 0, 140);
-}
-
-.dark-mode li a {
-  color: rgb(212, 212, 212);
-}
-
-.dark-mode2 {
-  background-image: linear-gradient(to right, rgba(72, 50, 77, 0.808), rgba(91, 45, 45, 0.593), rgba(255, 42, 184, 0.654));
-}
-
-.dark-mode2 li a {
-  color: rgb(244, 220, 242);
-}
-
-.dark-mode3 li a {
-  color: black;
-}
-
-.dark-mode3 li {
-  background-color: rgba(255, 0, 149, 0.629);
-}
-
-#btnMode {
-  background-color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
-  width: 160px;
-}
-
-#lista {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-image: linear-gradient(to right, rgba(238, 169, 253, 0.808), rgba(255, 0, 0, 0.593), rgba(255, 42, 184, 0.654));
-
-}
-
 /* Media Queris */
 @media (max-width: 450px) {
 

@@ -15,10 +15,6 @@ searchForm.addEventListener('submit', function (event) {
 
 })
 
-
-// Modo Oscuro
-
-
 // Funcionalidad de la página
 let qs = location.search;
 let qsObj = new URLSearchParams(qs);

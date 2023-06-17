@@ -15,9 +15,6 @@ searchForm.addEventListener('submit', function (event) {
 
 })
 
-//MODO OSCURO
-
-
 
 //FUNCIONALIDADES DE LA PAGINA
 
@@ -30,7 +27,7 @@ let sectionLista = document.querySelector('#lista');
 let cancionesFavoritas = '';
  
 if (favoritos == null || favoritos.length == 0) {
-    section.innerHTML = '<p>No hay favoritos seleccionados</p>'
+    sectionLista.innerHTML = '<p>No hay favoritos seleccionados</p>'
 } else { for (let i = 0; i < favoritos.length; i++) {
   
   let proxy = 'https://api.allorigins.win/raw?url=';

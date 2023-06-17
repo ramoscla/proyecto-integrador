@@ -54,5 +54,5 @@ fetch(proxy + url_genero)
   });
 
 
-//MODO OSCURO 
+ 
 

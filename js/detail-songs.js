@@ -15,9 +15,6 @@ searchForm.addEventListener('submit', function (event) {
 
 })
 
-//MODO OSCURO
-
-
 // FUNCIONALIDADES DE LA PAGINA
 
 let qs = location.search;
@@ -59,7 +56,6 @@ fetch(proxy + urlDetalle)
       previewContainer.style.display = "none";
   }}
   )
-
   
   .catch(function(error) {
     console.log(error);
